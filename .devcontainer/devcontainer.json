@@ -1,0 +1,73 @@
+{
+  "name": "Node",
+  "build": { "dockerfile": "./Dockerfile" },
+  "mounts": [
+    "source=${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
+  ],
+  "remoteUser": "node",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "eamodio.gitlens",
+        "christian-kohler.path-intellisense",
+        "wallabyjs.quokka-vscode",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "orta.vscode-jest"
+      ],
+      "settings": {
+        "editor.bracketPairColorization.enabled": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.detectIndentation": true,
+        "editor.formatOnPaste": true,
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": false,
+        "editor.lineNumbers": "on",
+        "editor.minimap.enabled": false,
+        "editor.renderWhitespace": "trailing",
+        "editor.rulers": [120],
+        "editor.unicodeHighlight.ambiguousCharacters": false,
+        "editor.wordWrap": "on",
+        "editor.wordWrapColumn": 120,
+        "editor.wrappingIndent": "indent",
+        "explorer.autoReveal": false,
+        "explorer.fileNesting.enabled": true,
+        "jest.jestCommandLine": "yarn test",
+        "npm.enableRunFromFolder": true,
+        "vim.easymotion": true,
+        "vim.handleKeys": {
+          "<C-p>": false,
+          "<C-d>": false,
+          "<C-w>": false,
+          "<C-h>": false,
+          "<C-j>": false,
+          "<C-k>": false,
+          "<C-l>": false,
+          "<C-q>": false,
+          "<C-b>": false
+        },
+        "vim.leader": ",",
+        "vim.normalModeKeyBindingsNonRecursive": [
+          { "before": ["u"], "commands": ["undo"] },
+          { "before": ["c-r"], "commands": ["redo"] }
+        ],
+        "vim.smartRelativeLine": true,
+        "vim.useSystemClipboard": true,
+        "vim.visualstar": true,
+        "workbench.editor.enablePreview": false,
+        "workbench.editor.enablePreviewFromQuickOpen": false,
+        "workbench.editorAssociations": {
+          "*.(png|jpg)": "imagePreview.previewEditor"
+        },
+        "workbench.startupEditor": "none",
+        "search.exclude": {
+          "**/node_modules": true,
+          "**/bower_components": true,
+          "**/*.code-search": true,
+          "**/dist": true
+        },
+        "quokka.showStartViewOnFeatureRelease": false
+      }
+    }
+  }
+}
