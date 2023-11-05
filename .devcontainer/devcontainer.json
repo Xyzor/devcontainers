@@ -4,6 +4,7 @@
   "mounts": [
     "source=${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
   ],
+  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
   "remoteUser": "node",
   "customizations": {
     "vscode": {
