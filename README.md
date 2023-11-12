@@ -8,5 +8,6 @@
 4. Set the `workspaceFolder` value in `devcontainer.json` to the same as `CONTAINER_WORKSPACE_FOLDER` in `.env`
 5. Disable git's filemode-change tracking to make life easier when working on both Windows and Unix systems
 
-    `git config --add core.filemode false`
-7. Run `Dev Containers: Reopen in Container` VSCode command
+   `git config --add core.filemode false`
+
+6. Run `Dev Containers: Reopen in Container` VSCode command
