@@ -1,0 +1,19 @@
+version: "0"
+
+services:
+  main:
+    env_file: .env
+    # Note that the path of the Dockerfile and context is relative to the *primary*
+    # compose.yml file (the first in the devcontainer.json "dockerComposeFile"
+    # array).
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      # This is where VS Code should expect to find your project's source code and the value of "workspaceFolder" in .devcontainer/devcontainer.json
+      - ${LOCAL_WORKSPACE_FOLDER}:${CONTAINER_WORKSPACE_FOLDER}:cached
+      - "${LOCAL_SSH_PATH}:/home/${ACTIVE_USER}/.ssh"
+
+    # Overrides default command so things don't shut down after the process ends.
+    command: /bin/sh -c "while sleep 1000; do :; done"

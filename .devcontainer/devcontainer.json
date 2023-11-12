@@ -1,11 +1,16 @@
 {
   "name": "Node",
-  "build": { "dockerfile": "./Dockerfile" },
-  "mounts": [
-    "source=${localEnv:USERPROFILE}/.ssh,target=/home/node/.ssh,type=bind,consistency=cached"
-  ],
-  "postCreateCommand": "bash .devcontainer/postCreateCommand.sh",
-  "remoteUser": "node",
+  "dockerComposeFile": ["compose.yml"],
+  // The name of the service for the container that VS Code should use.
+  // Have to be an existing service defined in compose.yml
+  "service": "main",
+  // The workspaceFolder property is the path VS Code should open by default when
+  // connected. Corresponds to a volume mount in compose.yml
+  "workspaceFolder": "${containerEnv:WORKSPACE_PATH}",
+  // Runs commands after the container is created.
+  "postCreateCommand": "sudo chown node -R ${containerEnv:WORKSPACE_PATH} && sudo chgrp node -R ${containerEnv:WORKSPACE_PATH}",
+  // Set container specific settings.json values on the default container.
+  // Doesn't apply to non-default containers defined in compose.yml
   "customizations": {
     "vscode": {
       "extensions": [
