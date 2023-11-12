@@ -6,9 +6,9 @@
   "service": "main",
   // The workspaceFolder property is the path VS Code should open by default when
   // connected. Corresponds to a volume mount in compose.yml
-  "workspaceFolder": "${containerEnv:WORKSPACE_PATH}",
+  "workspaceFolder": "/workspaces/node",
   // Runs commands after the container is created.
-  "postCreateCommand": "sudo chown node -R ${containerEnv:WORKSPACE_PATH} && sudo chgrp node -R ${containerEnv:WORKSPACE_PATH}",
+  "postCreateCommand": "sudo chown node -R ${containerEnv:CONTAINER_WORKSPACE_FOLDER} && sudo chgrp node -R ${containerEnv:CONTAINER_WORKSPACE_FOLDER}",
   // Set container specific settings.json values on the default container.
   // Doesn't apply to non-default containers defined in compose.yml
   "customizations": {
