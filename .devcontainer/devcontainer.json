@@ -8,7 +8,7 @@
   // connected. Corresponds to a volume mount in compose.yml
   "workspaceFolder": "/workspaces/node",
   // Runs commands after the container is created.
-  "postCreateCommand": "sudo chown node -R ${containerEnv:CONTAINER_WORKSPACE_FOLDER} && sudo chgrp node -R ${containerEnv:CONTAINER_WORKSPACE_FOLDER}",
+  "postCreateCommand": "bash -i .devcontainer/scripts/postCreateCommand.sh",
   // Set container specific settings.json values on the default container.
   // Doesn't apply to non-default containers defined in compose.yml
   "customizations": {
@@ -22,6 +22,7 @@
         "orta.vscode-jest"
       ],
       "settings": {
+        "accessibility.dimUnfocused.enabled": true,
         "editor.bracketPairColorization.enabled": true,
         "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.detectIndentation": true,
@@ -65,6 +66,7 @@
         "workbench.editorAssociations": {
           "*.(png|jpg)": "imagePreview.previewEditor"
         },
+        "workbench.panel.defaultLocation": "right",
         "workbench.startupEditor": "none",
         "search.exclude": {
           "**/node_modules": true,
