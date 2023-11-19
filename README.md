@@ -9,5 +9,6 @@
 5. Disable git's filemode-change tracking to make life easier when working on both Windows and Unix systems
 
    `git config --add core.filemode false`
-
-6. Run `Dev Containers: Reopen in Container` VSCode command
+6. Clone the repo into a `.devcontainers` folder at the root of your project
+7. Copy `.gitattributes` to the root folder
+8. Run `Dev Containers: Reopen in Container` VSCode command
