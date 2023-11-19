@@ -1,12 +1,12 @@
 {
-  "name": "Node",
+  "name": "PROJECT_NAME",
   "dockerComposeFile": ["compose.yml"],
   // The name of the service for the container that VS Code should use.
   // Have to be an existing service defined in compose.yml
   "service": "main",
   // The workspaceFolder property is the path VS Code should open by default when
   // connected. Corresponds to a volume mount in compose.yml
-  "workspaceFolder": "/workspaces/node",
+  "workspaceFolder": "CONTAINER_WORKSPACE_FOLDER",
   // Runs commands after the container is created.
   "postCreateCommand": "bash -i .devcontainer/scripts/postCreateCommand.sh",
   // Set container specific settings.json values on the default container.
