@@ -1,4 +1,13 @@
-# Personal devcontainers
+# Devcontainer for Node.js
+
+## Outcome
+
+After playing with it for a while, one issue prevented me from committing to this tool.  
+Mounting a Windows folder onto a Linux container results in a terrible reading speed (git status ~10 seconds on a medium-sized repo).  
+The recommendation was to have the source in a folder that's "Linux compatible" by either using WSL or adjusting the mounting method in the docker-compose.  
+For me, that's too much trouble.
+
+It also seems that Webpack's hot-module-replacement feature doesn't work in a devcontainer out of the box.
 
 ## How to use with VSCode
 
